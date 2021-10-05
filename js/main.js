@@ -1,0 +1,1 @@
+var burgerMenu=document.querySelector(".header__burger"),menu=document.querySelector(".header__list");burgerMenu&&burgerMenu.addEventListener("click",function(){document.body.classList.toggle("_lock"),burgerMenu.classList.toggle("_active"),menu.classList.toggle("_active")});
