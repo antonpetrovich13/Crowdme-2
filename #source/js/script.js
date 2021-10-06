@@ -1,7 +1,7 @@
 //МЕНЮ-БУРГЕР
 
-let burgerMenu = document.querySelector('.header__burger');
-let menu = document.querySelector('.header__list');
+var burgerMenu = document.querySelector('.header__burger');
+var menu = document.querySelector('.header__list');
 if (burgerMenu) {
 	burgerMenu.addEventListener('click', function () {
 		document.body.classList.toggle('_lock');
@@ -9,9 +9,43 @@ if (burgerMenu) {
 		menu.classList.toggle('_active');
 	})
 }
+// ФУНКЦИЯ IBG
+function ibg() {
+
+	var ibg = document.querySelectorAll(".ibg");
+	for (var i = 0; i < ibg.length; i++) {
+		if (ibg[i].querySelector('img')) {
+			ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+		}
+	}
+}
+ibg();
 
 
-/*//АНИМАЦИЯ ПРИ СКРОЛЛЕ
+var main = new Swiper('.main', {
+	navigation: {
+		nextEl: '.main__next',
+		prevEl: '.main__prev',
+	},
+
+	keyboard: {
+		enabled: true,
+		onlyInViewport: true,
+	},
+
+	loop: true,
+
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false,
+	},
+
+	speed: 900,
+});
+
+/*
+
+//АНИМАЦИЯ ПРИ СКРОЛЛЕ
 const animItems = document.querySelectorAll('._anim-items');
 
 if (animItems.length > 0) {
@@ -93,15 +127,7 @@ if (menuLinks.length > 0) {
 }
 
 
-//СЛАЙДЕР MAIN
-let swiper = new Swiper('.main__slider', {
-	speed: 800,
-	parallax: true,
-	navigation: {
-		nextEl: '.main__next',
-		prevEl: '.main__prev',
-	},
-});
+
 
 let lots = new Swiper('.lots__slider', {
 	speed: 500,

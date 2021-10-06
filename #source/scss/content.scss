@@ -1,0 +1,29 @@
+//  <MAIN>  ======================================================
+.main {
+	&__wrapper {
+		position: relative;
+	}
+
+	&__slide {
+		min-height: 100vh;
+	}
+
+	&__container {
+		z-index: 1;
+		position: absolute;
+		width: 13px;
+		height: 20px;
+		bottom: 48px;
+		right: 140px;
+		display: flex;
+		justify-content: flex-start;
+	}
+	&__prev {
+		margin: 0px 16px 0px 0px;
+		cursor: pointer;
+	}
+	&__next {
+		margin: 0px 0px 0px 16px;
+		cursor: pointer;
+	}
+}
