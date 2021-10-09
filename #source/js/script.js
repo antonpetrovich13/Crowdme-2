@@ -1,3 +1,4 @@
+
 //МЕНЮ-БУРГЕР
 
 var burgerMenu = document.querySelector('.header__burger');
@@ -9,7 +10,10 @@ if (burgerMenu) {
 		menu.classList.toggle('_active');
 	})
 }
+
+
 // ФУНКЦИЯ IBG
+
 function ibg() {
 
 	var ibg = document.querySelectorAll(".ibg");
@@ -21,6 +25,8 @@ function ibg() {
 }
 ibg();
 
+
+// СЛАЙДЕР
 
 var main = new Swiper('.main', {
 	navigation: {
@@ -42,6 +48,36 @@ var main = new Swiper('.main', {
 
 	speed: 900,
 });
+
+// ТАБЫ
+var tabs = document.querySelectorAll('.properties__tab');
+var contents = document.querySelectorAll('.properties__content');
+
+tabs.forEach(function (tab, index) {
+	tab.addEventListener("click", function () {
+
+
+		// To remove active class from previous tab
+		tabs.forEach(function (tab) {
+			return tab.classList.remove("active");
+		});
+
+		tab.classList.add("active");
+
+		//TO SHOW CONTENT ACCORDING TO PREVIOUS TAB
+
+		//To hide previous tab content
+		contents.forEach(function (c) {
+			return c.classList.remove("active");
+		});
+
+
+		contents[index].classList.add("active");
+	});
+});
+
+// To run the animation initially when the page loads
+tabs[0].click();
 
 /*
 

@@ -256,3 +256,112 @@
 		}
 	}
 }
+
+//  <PROPERTIES>  ======================================================
+.properties {
+	padding: 78px 0px 53.5px 0px;
+	height: 100%;
+	&__tabs {
+		display: flex;
+		margin: 0px -20px;
+	}
+
+	&__tab {
+		flex: 0 1 33.333%;
+		padding: 0px 20px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		font-size: 33.2px;
+		font-weight: 300;
+		color: #656565;
+		position: relative;
+		& span {
+			width: 43px;
+			height: 43px;
+			background-color: grey;
+			border-radius: 50%;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 20.2px;
+			color: #ffffff;
+			margin: 0px 31px 0px 0px;
+			transition: all 0.5s ease 0s;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: -37px;
+			left: 0;
+			width: 0%;
+			height: 1px;
+			background-color: #add136;
+			transition: width 0.8s ease 0s;
+		}
+		&.active:after {
+			width: 100%;
+		}
+		&.active span {
+			background-color: #add136;
+		}
+	}
+
+	&__number {
+	}
+
+	&__body {
+		margin: 103px auto 0px auto;
+		max-width: 880px;
+		position: relative;
+	}
+
+	&__content {
+		position: absolute;
+		align-items: center;
+		display: none;
+		&.active {
+			display: flex;
+			animation: fade 1s ease;
+		}
+	}
+
+	&__image {
+		flex: 1 0 113px;
+		margin: 0px 105px 0px 0px;
+		& img {
+			max-width: 100%;
+		}
+	}
+
+	&__text {
+	}
+
+	&__title {
+		font-size: 25.2px;
+		color: #add136;
+	}
+
+	&__subtitle {
+		margin: 34px 0px 0px 0px;
+		opacity: 0.67;
+		font-size: 17.2px;
+		line-height: 30px;
+		color: #606060;
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.nomain {
+	margin: 200px 0px 0px 0px;
+}
