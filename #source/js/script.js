@@ -74,6 +74,7 @@ tabs.forEach(function (tab, index) {
 
 		contents[index].classList.add("active");
 	});
+
 });
 
 // To run the animation initially when the page loads
