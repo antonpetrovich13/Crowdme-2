@@ -478,6 +478,225 @@
 	}
 }
 
-.nomain {
-	margin: 250px 0px 0px 0px;
+//  <FIND>  ======================================================
+
+.find {
+	padding: 257px 0px 0px 0px;
+	&__wrapper {
+		display: flex;
+	}
+
+	&__column {
+		padding: 47px 15px;
+		flex: 0 1 50%;
+
+		&_1 {
+			background-color: #e2f8ff;
+		}
+		&_2 {
+			background-color: #f5f9eb;
+		}
+	}
+
+	&__item {
+	}
+}
+.item {
+	max-width: 450px;
+	margin: 0px auto;
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__image {
+		flex: 1 0 133px;
+		margin: 0px 45px 0px 0px;
+		& img {
+			max-width: 100%;
+		}
+	}
+
+	&__body {
+	}
+
+	&__title {
+		font-family: "Montserrat";
+		font-size: 23.2px;
+		font-weight: 400;
+		color: #515151;
+	}
+
+	&__text {
+		margin: 34px 0px 31px 0px;
+		font-size: 17.2px;
+		line-height: 28px;
+		color: #515151;
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 187px;
+		height: 51px;
+		border-radius: 10px;
+		position: relative;
+		&_1 {
+			background-color: #26a6d1;
+			transition: all 0.3s ease 0s;
+			&:before {
+				content: "";
+				transition: all 0.3s ease 0s;
+				z-index: 1;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				border-radius: 10px;
+				background-color: #add136;
+				transform: scale(0);
+			}
+			&:hover {
+				&::before {
+					transform: scale(1);
+				}
+			}
+		}
+		&_2 {
+			background-color: #add136;
+			transition: all 0.3s ease 0s;
+			&:before {
+				content: "";
+				transition: all 0.3s ease 0s;
+				z-index: 1;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				border-radius: 10px;
+				background-color: #26a6d1;
+				transform: scale(0);
+			}
+			&:hover {
+				&::before {
+					transform: scale(1);
+				}
+			}
+		}
+		& p {
+			position: relative;
+			z-index: 2;
+			font-size: 14.9px;
+			font-weight: 600;
+			color: #ffffff;
+		}
+	}
+}
+
+@media (max-width: 1050px) {
+	.find {
+		padding: 200px 0px 0px 0px;
+	}
+
+	.item {
+		&__image {
+			flex: 1 0 90px;
+			margin: 0px 40px 0px 0px;
+		}
+		&__text {
+			margin: 20px 0px;
+			font-size: 17.2px;
+			line-height: 28px;
+			color: #515151;
+		}
+	}
+}
+
+@media (max-width: 970px) {
+	.find {
+		&__wrapper {
+			flex-wrap: wrap;
+		}
+		&__column {
+			flex: 0 1 100%;
+		}
+	}
+	.item {
+		&__image {
+			flex: 1 0 110px;
+			margin: 0px 70px 0px 0px;
+		}
+		&__text {
+			margin: 20px 0px;
+			font-size: 17.2px;
+			line-height: 28px;
+			color: #515151;
+		}
+	}
+}
+
+@media (max-width: 890px) {
+	.find {
+		padding: 180px 0px 0px 0px;
+	}
+}
+
+@media (max-width: 600px) {
+	.find {
+		padding: 170px 0px 0px 0px;
+	}
+	.item {
+		&__image {
+			flex: 1 0 80px;
+			margin: 0px 40px 0px 0px;
+		}
+		&__title {
+			font-size: 20px;
+		}
+		&__text {
+			font-size: 15px;
+			line-height: 26px;
+		}
+		&__button {
+			width: 155px;
+			height: 45px;
+			border-radius: 7px;
+			& p {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.find {
+		padding: 190px 0px 0px 0px;
+	}
+	.item {
+		&__image {
+			display: none;
+		}
+		&__body {
+			text-align: center;
+		}
+		&__button {
+			margin: 0px auto;
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.find {
+		padding: 210px 0px 0px 0px;
+	}
+}
+
+@media (max-width: 350px) {
+	.find {
+		padding: 240px 0px 0px 0px;
+	}
 }
