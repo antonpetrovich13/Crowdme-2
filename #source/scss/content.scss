@@ -723,7 +723,7 @@
 	&__text {
 		max-width: 700px;
 		font-size: 17.2px;
-		line-height: 24px;
+		line-height: 28px;
 		color: #8f8f8f;
 	}
 
@@ -769,7 +769,7 @@
 	&__content {
 		display: flex;
 		justify-content: center;
-		margin: 66px -20px 0px -20px;
+		margin: 62px -20px 0px -20px;
 	}
 
 	&__column {
@@ -783,6 +783,17 @@
 
 .items {
 	height: 100%;
+	&:hover {
+		.items__image {
+			& img{
+				transform: scale(1.02);
+				
+			}
+		}
+		.items__marker {
+			transform: rotate(-45deg) translate(0%, -70%);
+		}
+	}
 	&__wrapper {
 		cursor: pointer;
 		display: flex;
@@ -794,10 +805,15 @@
 
 	&__image {
 		position: relative;
-		&:hover {
-			.items__marker {
-				transform: rotate(-45deg) translate(0%, -70%);
-			}
+		
+	}
+
+	&__ibg {
+		& img {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility:    hidden;
+			-ms-backface-visibility:     hidden;
+			transition: all 0.3s ease 0s;
 		}
 	}
 
@@ -851,11 +867,13 @@
 	}
 
 	&__content {
+		margin: -1px 0px 0px 0px;
 		background-color: #fafafa;
 		padding: 29px 25px 35px 25px;
 		border-bottom-left-radius: 8px;
 		border-bottom-right-radius: 8px;
 		border: 1px solid rgba(0, 0, 0, 0.13);
+		border-top: 1px solid rgba(0, 0, 0, 0.13);
 		height: 100%;
 	}
 	&__body {
@@ -987,5 +1005,35 @@
 
 	&__shape {
 		transition: all 0.3s ease 0s;
+	}
+}
+
+@media (max-width: 1050px) {
+	.future {
+		&__title {
+			font-size: 26px;
+			margin: 0px 0px 20px 0px;
+		}
+		&__content {
+			flex-wrap: wrap;
+		}
+		&__column {
+			flex: 0 1 50%;
+		}
+	}
+
+	.items {
+		&__ibg {
+			height: 220px;
+			&_1{
+				background-image: url('../img/future/01.png');
+			}
+			&_2{
+				background-image: url('../img/future/02.png');
+			}
+			&_3{
+				background-image: url('../img/future/03.png');
+			}
+		}
 	}
 }
