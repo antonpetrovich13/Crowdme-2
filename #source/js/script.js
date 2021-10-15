@@ -83,18 +83,24 @@ tabs[0].click();
 
 
 
-// ДОБАВЛЯЕМ IBG НАДИСПЛЕЯХ < 1050px
+// ДОБАВЛЯЕМ IBG НА ДИСПЛЕЯХ < 1050px
 var ibgs = document.querySelectorAll('.items__ibg');
 
 
-if (document.body.offsetWidth < 1050) {
 
 
-	ibgs[0].classList.add('ibg');
-	ibgs[1].classList.add('ibg');
-	ibgs[2].classList.add('ibg');
+function unloadImages() {
+
+	if (document.documentElement.offsetWidth < 1050) {
+
+		ibgs[0].classList.add('ibg');
+		ibgs[1].classList.add('ibg');
+		ibgs[2].classList.add('ibg');
+
+	}
 
 }
 
+unloadImages();
 
 
