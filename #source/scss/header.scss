@@ -1,0 +1,262 @@
+.header {
+	z-index: 100;
+	position: fixed;
+	height: 84px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	&:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+		z-index: 1;
+	}
+	&__wrapper {
+		height: 84px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__burger {
+		display: none;
+		visibility: hidden;
+		z-index: 2;
+	}
+
+	&__list {
+		z-index: 2;
+		display: flex;
+		& li {
+			margin: 0px 15px;
+			opacity: 0.67;
+			font-size: 13.2px;
+			font-weight: 600;
+			text-transform: uppercase;
+			&:first-child {
+				margin: 0px 15px 0px 0px;
+			}
+			&:last-child {
+				margin: 0px 0px 0px 15px;
+			}
+		}
+	}
+
+	&__link {
+		z-index: 2;
+		transition: all 0.4s ease 0s;
+		color: #666666;
+		&:hover {
+			color: #000;
+		}
+	}
+
+	&__button {
+		z-index: 5;
+		position: relative;
+		transition: all 0.3s ease 0s;
+		width: 100px;
+		height: 37px;
+		opacity: 0.81;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:hover {
+			& span {
+				transform: scale(1.07);
+			}
+		}
+		& p {
+			opacity: 0.81;
+			font-size: 13.2px;
+			font-weight: 600;
+			color: #ffffff;
+		}
+		& span {
+			transition: all 0.3s ease 0s;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: #add136;
+			border-radius: 30px;
+		}
+	}
+}
+
+.logo {
+	z-index: 2;
+	display: flex;
+	align-items: flex-end;
+	&__image {
+		padding: 0px 5px 0px 0px;
+	}
+
+	&__text {
+		padding: 0px 0px 0px 5px;
+		font-family: "Nunito";
+		font-size: 31.2px;
+		text-transform: uppercase;
+		color: #6d6e70;
+		& span {
+			color: #595959;
+		}
+	}
+}
+
+@media (max-width: 970px) {
+	.header {
+		&__list {
+			& li {
+				margin: 0px 8px;
+				&:first-child {
+					margin: 0px 8px 0px 0px;
+				}
+				&:last-child {
+					margin: 0px 0px 0px 8px;
+				}
+			}
+		}
+		&__button {
+			width: 80px;
+		}
+	}
+
+	.logo {
+		&__image {
+			transform: scale(0.9);
+		}
+		&__text {
+			font-size: 26px;
+		}
+	}
+}
+
+@media (max-width: 840px) {
+	.header {
+		height: 70px;
+		&:before {
+			z-index: 4;
+		}
+		&__wrapper {
+			height: 70px;
+		}
+		&__burger {
+			order: 2;
+			z-index: 4;
+			display: block;
+			visibility: visible;
+			position: relative;
+			width: 30px;
+			height: 18px;
+			top: 0;
+			left: 0;
+			&:before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 1.5px;
+				top: 0px;
+				left: 0;
+				background-color: #595959;
+				transition: all 0.3s ease 0s;
+			}
+			& span {
+				position: absolute;
+				width: 100%;
+				height: 1.5px;
+				top: 8px;
+				left: 0;
+				background-color: #595959;
+				transition: all 0.3s ease 0s;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 1.5px;
+				top: 16px;
+				left: 0;
+				background-color: #595959;
+				transition: all 0.3s ease 0s;
+			}
+		}
+		&__burger._active:before {
+			transform: rotate(45deg);
+			top: 8px;
+		}
+		&__burger._active span {
+			transform: scale(0);
+		}
+		&__burger._active:after {
+			transform: rotate(-45deg);
+			top: 8px;
+		}
+		&__list {
+			transition: all 0.5s ease 0s;
+			position: fixed;
+			overflow: auto;
+			z-index: 3;
+			width: 100%;
+			height: 100%;
+			top: -100%;
+			left: 0;
+			background-color: rgb(43, 49, 59);
+			flex-direction: column;
+			padding: 120px 0px 20px 0px;
+			align-items: center;
+			& li {
+				margin: 35px 0px 0px 0px;
+				opacity: 1;
+				font-size: 18px;
+				&:first-child {
+					margin: 0px 0px 0px 0px;
+				}
+				&:last-child {
+					margin: 35px 0px 0px 0px;
+				}
+			}
+		}
+		&__list._active {
+			top: 0;
+		}
+		&__link {
+			color: #fff;
+		}
+	}
+	&__button {
+		order: 3;
+	}
+	.logo {
+		order: 1;
+		z-index: 4;
+	}
+}
+
+@media (max-width: 480px) {
+	.header {
+		height: 60px;
+		&__wrapper {
+			height: 60px;
+		}
+		&__button {
+			height: 30px;
+			width: 70px;
+		}
+	}
+	.logo {
+		&__image {
+			display: none;
+			visibility: hidden;
+		}
+		&__text {
+			font-size: 24px;
+			padding: 0px 0px 0px 0px;
+		}
+	}
+}

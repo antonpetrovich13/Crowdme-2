@@ -87,8 +87,6 @@ tabs[0].click();
 var ibgs = document.querySelectorAll('.items__ibg');
 
 
-
-
 function unloadImages() {
 
 	if (document.documentElement.offsetWidth < 1050) {
@@ -103,4 +101,30 @@ function unloadImages() {
 
 unloadImages();
 
+// НАВИГАЦИЯ
+var menuLinks = document.querySelectorAll(".nav__link[data-goto]");
+if (menuLinks.length > 0) {
+	menuLinks.forEach(function (menuLink) {
+		menuLink.addEventListener("click", onMenuLinkClick);
+	});
 
+	function onMenuLinkClick(e) {
+		var menuLink = e.target;
+		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+			var goToBlock = document.querySelector(menuLink.dataset.goto);
+			var goToBlockValue = goToBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.header').offsetHeight;
+
+			if (burgerMenu.classList.contains('_active')) {
+				document.body.classList.remove('_lock');
+				burgerMenu.classList.remove('_active');
+				menu.classList.remove('_active');
+			}
+
+			window.scrollTo({
+				top: goToBlockValue,
+				behavior: "smooth"
+			});
+			e.preventDefault();
+		}
+	}
+}
