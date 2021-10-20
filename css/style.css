@@ -62,7 +62,8 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 body {
   font-size: 14px;
-  color: #000; }
+  color: #000;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
   body._lock {
     overflow: hidden; }
 
@@ -210,7 +211,10 @@ body {
       top: 0;
       left: 0;
       background-color: #add136;
-      border-radius: 30px; }
+      border-radius: 30px;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden; }
 
 .logo {
   z-index: 2;
@@ -473,7 +477,10 @@ body {
       top: 0;
       left: 0;
       background-color: #fff;
-      border-radius: 8px; }
+      border-radius: 8px;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden; }
 
 @media (max-width: 1000px) {
   .main__container {
@@ -878,7 +885,10 @@ body {
         background-color: #add136;
         -webkit-transform: scale(0);
         -ms-transform: scale(0);
-        transform: scale(0); }
+        transform: scale(0);
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden; }
       .item__button_1:hover::before {
         -webkit-transform: scale(1);
         -ms-transform: scale(1);

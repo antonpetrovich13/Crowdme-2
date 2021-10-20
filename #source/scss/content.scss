@@ -95,6 +95,9 @@
 			left: 0;
 			background-color: #fff;
 			border-radius: 8px;
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
 		}
 	}
 }
@@ -558,6 +561,9 @@
 				border-radius: 10px;
 				background-color: #add136;
 				transform: scale(0);
+				-webkit-backface-visibility: hidden;
+				-moz-backface-visibility: hidden;
+				-ms-backface-visibility: hidden;
 			}
 			&:hover {
 				&::before {
